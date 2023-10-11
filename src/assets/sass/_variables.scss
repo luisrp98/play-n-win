@@ -1,9 +1,20 @@
 $color-rich-black: #011627;
 $color-red: #ff0022;
-$color-tea: #c4d6b0;
+$color-tea: #aec792;
 $color-cerulean: #477998;
 
 $font-family: 'Poppins', sans-serif;
 $font-size-light: 200;
 $font-size-regular: 400;
 $font-size-bold: 700;
+
+$background-color: #f3f6f9;
+$font-family: 'Press Start 2P', Arial, sans-serif;
+$font-size: 14px;
+$font-color: #000000;
+$font-color-light: #fff;
+
+$header-height: 100px; //Altura del encabezado
+
+$workarea-background-color: #ffffff;
+$workarea-min-height: calc(100vh - 136px); //Altura mínima del área de trabajo
