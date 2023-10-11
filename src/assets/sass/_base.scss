@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import '_variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
 * {
@@ -9,4 +9,26 @@
 
 html {
     font-size: 16px;
+}
+
+body {
+    background-color: $background-color;
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-size;
+    color: $font-color;
+    margin: 0; 
+}
+
+main {
+  background-color: $workarea-background-color;
+  box-shadow: rgba(255, 255, 255, 0.25) 0 0 100px 0;
+  min-height: $workarea-min-height;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin:  1.5rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
 }
