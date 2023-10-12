@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catálogo</title>
+        <title>Catálogo de Videojuegos</title>
         <link rel="stylesheet" href="../assets/css/styles.css" />
     </head>
+
     <body>
         <header>
             <nav>
@@ -26,7 +27,7 @@
             <div id="form">
                 <h2 id="form-title">Buscador</h2>
                 <form action="">
-                    <input type="text" placeholder="Nombre" id="search" />
+                    <input type="text" placeholder="Nombre" />
                     <legend>Plataforma:</legend>
                     <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
                     <label for="ps4">PlayStation 4</label><br />
@@ -77,23 +78,11 @@
                     <input type="submit" value="Buscar" id="btn-submit" />
                 </form>
             </div>
-            <div id="items-section">
-                <div class="item-card">
-                    <img
-                        src="https://m.media-amazon.com/images/I/71v0c8ZDv-L.jpg"
-                        alt=""
-                    />
-                    <h2 class="item-card-title">Horizon Zero Dawn</h2>
-                    <p class="item-card-price">59.99$</p>
-                    <p class="item-card-plataform">Plataformas: PS4, PS5</p>
-                    <p class="item-card-desc">
-                        Descripción: Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Ut recusandae qui ab minus! Numquam accusantium enim fugit
-                        voluptate, adipisci quas explicabo nesciunt doloribus, id ipsa
-                        optio fugiat in rerum ipsam.
-                    </p>
-                </div>
+
+            <div id="items-section" class="card-container">
+                <!-- Aquí se generarán las tarjetas de juego -->
             </div>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>
