@@ -11,7 +11,7 @@
         "Etiquetas": ["Acción", "Aventuras", "Mundo abierto"],
         "Cantidad de jugadores": "Un jugador",
         "Calificacion ESRB": "T (Teen)",
-        "Plataforma": ["PS4", "PS5"]
+        "Plataforma": ["PlayStation 4", "PlayStation 5"]
       },
       {
         "Titulo": "The Witcher 3: Wild Hunt",
@@ -24,7 +24,7 @@
         "Etiquetas": ["RPG", "Fantasía", "Mundo abierto"],
         "Cantidad de jugadores": "Un jugador",
         "Calificacion ESRB": "M (Mature)",
-        "Plataforma": ["PS4", "Xbox One", "PC", "Switch"]
+        "Plataforma": ["PlayStation 4", "Xbox One", "PC", "Switch"]
       },
       {
         "Titulo": "Animal Crossing: New Horizons",
@@ -50,7 +50,7 @@
         "Etiquetas": ["Acción", "Aventuras", "Supervivencia"],
         "Cantidad de jugadores": "Un jugador",
         "Calificacion ESRB": "M (Mature)",
-        "Plataforma": ["PS3", "PS4"]
+        "Plataforma": ["PS3", "PlayStation 4"]
       }     
       
     ]

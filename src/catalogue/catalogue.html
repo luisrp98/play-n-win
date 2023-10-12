@@ -28,7 +28,13 @@
         <div id="form">
             <h2 id="form-title">Buscador</h2>
             <form action="">
-                <input type="text" placeholder="Nombre" />
+                <input type="text" placeholder="Nombre" list="gameNames">
+                <datalist id="gameNames">
+                    <option value="Horizon Zero Dawn">
+                    <option value="The Witcher 3: Wild Hunt">
+                    <option value="Animal Crossing: New Horizons">
+                    <option value="The Last of Us">
+                </datalist>
                 <legend>Plataforma:</legend>
                 <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
                 <label for="ps4">PlayStation 4</label><br />
