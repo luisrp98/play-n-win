@@ -25,28 +25,27 @@ function generateGameCards(videojuegos) {
 
         // Crear la imagen
         const image = document.createElement('img');
-        image.src = game.Imagen; // Asegúrate de que la propiedad Imagen coincida con la estructura de tu JSON
-        image.alt = game.Titulo; // Asegúrate de que la propiedad Titulo coincida con la estructura de tu JSON
+        image.src = game.Imagen; 
+        image.alt = game.Titulo; 
 
         // Crear el título
         const title = document.createElement('h2');
         title.classList.add('item-card-title');
-        title.textContent = game.Titulo; // Asegúrate de que la propiedad Titulo coincida con la estructura de tu JSON
-
+        title.textContent = game.Titulo; 
         // Crear el precio
         const price = document.createElement('p');
         price.classList.add('item-card-price');
-        price.textContent = `${game.Precio}$`; // Asegúrate de que la propiedad Precio coincida con la estructura de tu JSON
+        price.textContent = `${game.Precio}$`; 
 
         // Crear la información de la plataforma
         const platform = document.createElement('p');
         platform.classList.add('item-card-plataform');
-        platform.textContent = `Plataformas: ${game.Plataforma.join(', ')}`; // Asegúrate de que la propiedad Plataforma coincida con la estructura de tu JSON
+        platform.textContent = `Plataformas: ${game.Plataforma.join(', ')}`; 
 
         // Crear la descripción
         const description = document.createElement('p');
         description.classList.add('item-card-desc');
-        description.textContent = `Descripción: ${game.Descripcion}`; // Asegúrate de que la propiedad Descripcion coincida con la estructura de tu JSON
+        description.textContent = `Descripción: ${game.Descripcion}`; 
 
         // Agregar elementos al card
         card.appendChild(image);
@@ -132,4 +131,3 @@ searchForm.addEventListener('submit', (event) => {
         console.error("Error en el filtro:", error);
     }
 });
-
