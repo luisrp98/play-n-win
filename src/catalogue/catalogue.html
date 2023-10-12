@@ -23,10 +23,10 @@
             </nav>
         </header>
         <main>
-            <h1>Catálogo</h1>
-            <form action="">
-                <input type="text" placeholder="Nombre" />
-                <fieldset>
+            <div id="form">
+                <h2 id="form-title">Buscador</h2>
+                <form action="">
+                    <input type="text" placeholder="Nombre" />
                     <legend>Plataforma:</legend>
                     <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
                     <label for="ps4">PlayStation 4</label><br />
@@ -55,18 +55,45 @@
                         id="switch"
                     />
                     <label for="switch">Nintendo Switch</label><br />
-                </fieldset>
-                <input type="number" name="" id="" placeholder="$ Mín." />
-                <input type="number" name="" id="" placeholder="$ Máx." />
-                <div>
-                    <p>1 estrella o más</p>
-                    <p>2 estrellas o más</p>
-                    <p>3 estrellas o más</p>
-                    <p>4 estrellas o más</p>
-                    <p>5 estrellas</p>
+                    <legend>Precio:</legend>
+                    <div id="form-section-price">
+                        <input type="number" name="" id="" placeholder="$ Mín." />
+                        <input type="number" name="" id="" placeholder="$ Máx." />
+                    </div>
+                    <legend>Calificación:</legend>
+
+                    <div id="form-section-stars">
+                        <input type="radio" name="star" value="1-star" id="1-star" />
+                        <label for="1-star">★</label>
+                        <input type="radio" name="star" value="2-star" id="2-star" />
+                        <label for="2-star">★★</label>
+                        <input type="radio" name="star" value="3-star" id="3-star" />
+                        <label for="3-star">★★★</label>
+                        <input type="radio" name="star" value="4-star" id="4-star" />
+                        <label for="4-star">★★★★</label>
+                        <input type="radio" name="star" value="5-star" id="5-star" />
+                        <label for="5-star">★★★★★</label>
+                    </div>
+                    <input type="submit" value="Buscar" id="btn-submit" />
+                </form>
+            </div>
+            <div id="items-section">
+                <div class="item-card">
+                    <img
+                        src="https://m.media-amazon.com/images/I/71v0c8ZDv-L.jpg"
+                        alt=""
+                    />
+                    <h2 class="item-card-title">Horizon Zero Dawn</h2>
+                    <p class="item-card-price">59.99$</p>
+                    <p class="item-card-plataform">Plataformas: PS4, PS5</p>
+                    <p class="item-card-desc">
+                        Descripción: Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ut recusandae qui ab minus! Numquam accusantium enim fugit
+                        voluptate, adipisci quas explicabo nesciunt doloribus, id ipsa
+                        optio fugiat in rerum ipsam.
+                    </p>
                 </div>
-                <input type="submit" value="Buscar" />
-            </form>
+            </div>
         </main>
     </body>
 </html>

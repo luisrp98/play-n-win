@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
 * {
   margin: 0;
@@ -6,3 +7,74 @@
 
 html {
   font-size: 16px; }
+
+p {
+  background-color: 0; }
+
+main {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  margin: 1rem 2rem 0 2rem; }
+
+#form {
+  width: 20%;
+  background-color: #8ebbff;
+  padding: 1rem; }
+  #form input {
+    font-family: inherit; }
+  #form legend {
+    margin: 1rem 0 0.5rem 0; }
+  #form #form-title {
+    text-align: center; }
+  #form #form-section-price {
+    display: flex;
+    justify-content: space-around; }
+    #form #form-section-price input {
+      width: 45%; }
+  #form #form-section-stars {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* Primera columna más pequeña */
+    color: yellow; }
+    #form #form-section-stars input {
+      margin-right: 0.5rem; }
+  #form #btn-submit {
+    margin-top: 1rem;
+    background-color: blue;
+    width: 100%;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 0; }
+
+#items-section {
+  background-color: #fffca1;
+  width: 100%;
+  padding: 2rem; }
+  #items-section .item-card {
+    padding: 1rem;
+    width: 100%;
+    height: 14rem;
+    display: grid;
+    grid-template-columns: 20% 1fr 10%;
+    grid-template-rows: 15% 10% 20% 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    background-color: white; }
+    #items-section .item-card img {
+      grid-row: 1 / 5;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; }
+    #items-section .item-card .item-card-title {
+      grid-column: 2 /3; }
+    #items-section .item-card .item-card-price {
+      grid-column: 3 /4;
+      grid-row: 1; }
+    #items-section .item-card .item-card-plataform {
+      grid-row: 2/3;
+      grid-column: 2/3; }
+    #items-section .item-card .item-card-desc {
+      grid-row: 3 / 5;
+      grid-column: 2 / span 3;
+      text-overflow: ellipsis;
+      overflow: hidden; }

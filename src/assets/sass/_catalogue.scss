@@ -1,0 +1,89 @@
+@import 'variables.scss';
+p {
+    background-color: blue($color: #000000);
+}
+main {
+    display: flex;
+    font-family: $font-family;
+    margin: 1rem 2rem 0 2rem;
+}
+#form {
+    width: 20%;
+    background-color: rgb(142, 187, 255);
+    padding: 1rem;
+    input {
+        font-family: inherit;
+    }
+    legend {
+        margin: 1rem 0 0.5rem 0;
+    }
+    #form-title {
+        text-align: center;
+    }
+    #form-section-price {
+        display: flex;
+        justify-content: space-around;
+        input {
+            width: 45%;
+        }
+    }
+    #form-section-stars {
+        display: grid;
+        grid-template-columns: auto 1fr; /* Primera columna más pequeña */
+        input {
+            margin-right: 0.5rem;
+        }
+        color: yellow;
+    }
+
+    #btn-submit {
+        margin-top: 1rem;
+        background-color: blue;
+        width: 100%;
+        height: 2rem;
+        border-radius: 1rem;
+        border: 0;
+    }
+}
+#items-section {
+    background-color: rgb(255, 252, 161);
+    width: 100%;
+    padding: 2rem;
+    .item-card {
+        padding: 1rem;
+        width: 100%;
+        height: 14rem;
+
+        display: grid;
+        grid-template-columns: 20% 1fr 10%;
+        grid-template-rows: 15% 10% 20% 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+
+        background-color: white;
+
+        img {
+            grid-row: 1 / 5;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .item-card-title {
+            grid-column: 2 /3;
+        }
+        .item-card-price {
+            grid-column: 3 /4;
+            grid-row: 1;
+        }
+        .item-card-plataform {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+        .item-card-desc {
+            grid-row: 3 / 5;
+            grid-column: 2 / span 3;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
