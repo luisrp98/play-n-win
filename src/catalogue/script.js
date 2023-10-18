@@ -149,7 +149,7 @@ searchForm.addEventListener('submit', (event) => {
             
         });
 
-        // Generar tarjetas para los juegos filtrados
+        // Generar tarjetas para los juegos filtradoss
         generateGameCards(filteredGames);
     } catch (error) {
         console.error("Error en el filtro:", error);
