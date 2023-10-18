@@ -9,13 +9,18 @@ main {
 }
 #form {
     width: 20%;
-    background-color: rgb(142, 187, 255);
     padding: 1rem;
+    background-color: $color-rich-black;
+    @include shadow;
+    color: white;
     input {
         font-family: inherit;
     }
     legend {
         margin: 1rem 0 0.5rem 0;
+    }
+    #search {
+        width: 100%;
     }
     #form-title {
         text-align: center;
@@ -38,7 +43,7 @@ main {
 
     #btn-submit {
         margin-top: 1rem;
-        background-color: blue;
+        background-color: $color-cerulean;
         width: 100%;
         height: 2rem;
         border-radius: 1rem;
@@ -46,7 +51,6 @@ main {
     }
 }
 #items-section {
-    background-color: rgb(255, 252, 161);
     width: 100%;
     padding: 2rem;
     .item-card {
@@ -59,8 +63,12 @@ main {
         grid-template-rows: 15% 10% 20% 1fr;
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
+        background-color: red;
+        background-image: linear-gradient(white 15%, $color-cerulean);
+        // background-color: $color-cerulean;
+        @include shadow;
 
-        background-color: white;
+        border-radius: 1.5rem;
 
         img {
             grid-row: 1 / 5;

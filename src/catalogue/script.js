@@ -28,9 +28,11 @@ function generateGameCards(videojuegos) {
         image.src = game.Imagen;
         image.alt = game.Titulo;
 
+
         // Crear el título
         const title = document.createElement('h2');
         title.classList.add('item-card-title');
+
         title.textContent = game.Titulo;
         // Crear el precio
         const price = document.createElement('p');
@@ -42,10 +44,13 @@ function generateGameCards(videojuegos) {
         platform.classList.add('item-card-plataform');
         platform.textContent = `Plataformas: ${game.Plataforma.join(', ')}`;
 
+
+
         // Crear la descripción
         const description = document.createElement('p');
         description.classList.add('item-card-desc');
         description.textContent = `Descripción: ${game.Descripcion}`;
+
 
         // Agregar elementos al card
         card.appendChild(image);
@@ -150,4 +155,3 @@ searchForm.addEventListener('submit', (event) => {
         console.error("Error en el filtro:", error);
     }
 });
-
