@@ -6,8 +6,8 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: $color-tea;
-    box-shadow: 0 8px 8px -4px rgba(0, 99, 16, 0.486);
+    background-color: $color-cerulean;
+    box-shadow: 0 8px 8px -4px $color-cerulean;
     color: $font-color-light;
     text-align: center;
     font-size: 1.25rem;
