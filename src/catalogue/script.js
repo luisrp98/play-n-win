@@ -64,7 +64,6 @@ function generateGameCards(videojuegos) {
     });
 }
 
-
 function clearGameCards() {
     const container = document.getElementById('items-section');
 
@@ -73,6 +72,7 @@ function clearGameCards() {
         container.removeChild(container.firstChild);
     }
 }
+
 
 // Define la variable videojuegos en un alcance más amplio
 let videojuegos;

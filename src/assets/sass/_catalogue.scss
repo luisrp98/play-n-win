@@ -10,9 +10,12 @@ main {
 #form {
     width: 20%;
     padding: 1rem;
-    background-color: $color-rich-black;
-    @include shadow;
+    margin-top: 1rem;
+    background-color: $color-cerulean;
+    @include shadow($color-cerulean);
     color: white;
+    border-radius: 1rem;
+    height: 100%;
     input {
         font-family: inherit;
     }
@@ -43,7 +46,16 @@ main {
 
     #btn-submit {
         margin-top: 1rem;
-        background-color: $color-cerulean;
+        background-color: $color-rich-black;
+        color: white;
+        width: 100%;
+        height: 2rem;
+        border-radius: 1rem;
+        border: 0;
+    }
+    #btn-clear {
+        margin-top: 1rem;
+        background-color: white;
         width: 100%;
         height: 2rem;
         border-radius: 1rem;
@@ -63,10 +75,9 @@ main {
         grid-template-rows: 15% 10% 20% 1fr;
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
-        background-color: red;
         background-image: linear-gradient(white 15%, $color-cerulean);
         // background-color: $color-cerulean;
-        @include shadow;
+        @include shadow($color-cerulean);
 
         border-radius: 1.5rem;
 

@@ -17,8 +17,8 @@ $header-height: 100px; //Altura del encabezado
 $workarea-background-color: #ffffff;
 $workarea-min-height: calc(100vh - 136px); //Altura mínima del área de trabajo
 
-@mixin shadow {
-    box-shadow: 8px 9px 13px -2px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 8px 9px 13px -2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 8px 9px 13px -2px rgba(0, 0, 0, 0.75);
+@mixin shadow($color) {
+    box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
+    -webkit-box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
+    -moz-box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
 }
