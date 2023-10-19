@@ -1,96 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catálogo de Videojuegos</title>
-        <link rel="stylesheet" href="../assets/css/styles.css" />
-    </head>
 
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="../catalogue/catalogue.html">Catálogo</a>
-                    </li>
-                    <li>
-                        <a href="../sales/sales.html">Ventas</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div id="form">
-                <h2 id="form-title">Buscador</h2>
-                <form action="">
-                    <input type="text" placeholder="game" list="gameNames" />
-                    <datalist id="gameNames">
-                        <option value="Horizon Zero Dawn"></option>
-                        <option value="The Witcher 3: Wild Hunt"></option>
-                        <option value="Animal Crossing: New Horizons"></option>
-                        <option value="The Last of Us"></option>
-                    </datalist>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Videojuegos</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
 
-                    <legend>Plataforma:</legend>
-                    <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
-                    <label for="ps4">PlayStation 4</label><br />
-                    <input type="checkbox" name="plataforma[]" value="PS5" id="ps5" />
-                    <label for="ps5">PlayStation 5</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Xbox One"
-                        id="xboxone"
-                    />
-                    <label for="xboxone">Xbox One</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Xbox X/S"
-                        id="xboxseries"
-                    />
-                    <label for="xboxseries">Xbox X/S</label><br />
-                    <input type="checkbox" name="plataforma[]" value="PC" id="pc" />
-                    <label for="pc">PC</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Switch"
-                        id="switch"
-                    />
-                    <label for="switch">Nintendo Switch</label><br />
-                    <legend>Precio:</legend>
-                    <div id="form-section-price">
-                        <input type="number" id="min-price" placeholder="$ Mín." />
-                        <input type="number" id="max-price" placeholder="$ Máx." />
-                    </div>
-                    <legend>Calificación:</legend>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../catalogue/catalogue.html">Catálogo</a>
+                </li>
+                <li>
+                    <a href="../sales/sales.html">Ventas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="form">
+            <h2 id="form-title">Buscador</h2>
+            <form action="">
+                <input type="text" placeholder="game" list="gameNames">
+                <datalist id="gameNames">
+                    <option value="Horizon Zero Dawn">
+                    <option value="The Witcher 3: Wild Hunt">
+                    <option value="Animal Crossing: New Horizons">
+                    <option value="The Last of Us">
+                </datalist>
+                <legend>Plataforma:</legend>
+                <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
+                <label for="ps4">PlayStation 4</label><br />
+                <input type="checkbox" name="plataforma[]" value="PS5" id="ps5" />
+                <label for="ps5">PlayStation 5</label><br />
+                <input type="checkbox" name="plataforma[]" value="Xbox One" id="xboxone" />
+                <label for="xboxone">Xbox One</label><br />
+                <input type="checkbox" name="plataforma[]" value="Xbox X/S" id="xboxseries" />
+                <label for="xboxseries">Xbox X/S</label><br />
+                <input type="checkbox" name="plataforma[]" value="PC" id="pc" />
+                <label for="pc">PC</label><br />
+                <input type="checkbox" name="plataforma[]" value="Switch" id="switch" />
+                <label for="switch">Nintendo Switch</label><br />
+                <legend>Precio:</legend>
+                <div id="form-section-price">
+                    <input type="number" id="min-price" placeholder="$ Mín." />
+                    <input type="number" id="max-price" placeholder="$ Máx." />
+                </div>
+                <legend>Calificación:</legend>
+                <div id="form-section-stars">
+                    <input type="radio" name="star" value="1-star" id="1-star" />
+                    <label for="1-star">★</label>
+                    <input type="radio" name="star" value="2-star" id="2-star" />
+                    <label for="2-star">★★</label>
+                    <input type="radio" name="star" value="3-star" id="3-star" />
+                    <label for="3-star">★★★</label>
+                    <input type="radio" name="star" value="4-star" id="4-star" />
+                    <label for="4-star">★★★★</label>
+                    <input type="radio" name="star" value="5-star" id="5-star" />
+                    <label for="5-star">★★★★★</label>
+                </div>
+                <input type="submit" value="Buscar" id="btn-submit" />
+            </form>
+        </div>
 
-                    <div id="form-section-stars">
-                        <input type="radio" name="star" value="1-star" id="1-star" />
-                        <label for="1-star">★</label>
-                        <input type="radio" name="star" value="2-star" id="2-star" />
-                        <label for="2-star">★★</label>
-                        <input type="radio" name="star" value="3-star" id="3-star" />
-                        <label for="3-star">★★★</label>
-                        <input type="radio" name="star" value="4-star" id="4-star" />
-                        <label for="4-star">★★★★</label>
-                        <input type="radio" name="star" value="5-star" id="5-star" />
-                        <label for="5-star">★★★★★</label>
-                    </div>
-                    <input type="submit" value="Buscar" id="btn-submit" />
-                    <input type="button" value="Limpiar filtro" id="btn-clear" />
-                </form>
-            </div>
+        <div id="items-section" class="card-container">
+            <!-- Aquí se generarán las tarjetas de juego -->
+        </div>
 
-            <div id="items-section" class="card-container">
-                <!-- Aquí se generarán las tarjetas de juego -->
-            </div>
-        </main>
-        <script src="script.js"></script>
-    </body>
+    </main>
+    <script src="script.js"></script>
+</body>
+
 </html>

@@ -64,21 +64,6 @@ function generateGameCards(videojuegos) {
     });
 }
 
-// Llama a la función para cargar los datos y generar las tarjetas de juego
-loadVideojuegosData()
-    .then(data => {
-        generateGameCards(data.videojuegos);
-    });
-
-
-
-
-// Llama a la función para cargar los datos y trabajar con ellos
-loadVideojuegosData()
-    .then(data => {
-        generateGameCards(data.videojuegos);
-    });
-
 function clearGameCards() {
     const container = document.getElementById('items-section');
 
@@ -87,6 +72,7 @@ function clearGameCards() {
         container.removeChild(container.firstChild);
     }
 }
+
 
 // Define la variable videojuegos en un alcance más amplio
 let videojuegos;
