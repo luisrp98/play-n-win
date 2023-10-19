@@ -64,6 +64,7 @@ function generateGameCards(videojuegos) {
     });
 }
 
+
 function clearGameCards() {
     const container = document.getElementById('items-section');
 
@@ -72,7 +73,6 @@ function clearGameCards() {
         container.removeChild(container.firstChild);
     }
 }
-
 
 // Define la variable videojuegos en un alcance más amplio
 let videojuegos;
@@ -99,7 +99,8 @@ searchForm.addEventListener('submit', (event) => {
     const nameFilter = document.querySelector('input[type="text"]').value.toLowerCase(); // Convertir a minúsculas para hacer coincidencia insensible a mayúsculas y minúsculas
     const minPriceFilter = parseFloat(document.querySelector('#min-price').value) || 0;
     const maxPriceFilter = parseFloat(document.querySelector('#max-price').value) || Infinity;
- 
+
+
     // Filtrar los juegos que cumplen con los criterios
     try {
         const filteredGames = videojuegos.filter(game => {
@@ -124,15 +125,29 @@ searchForm.addEventListener('submit', (event) => {
                 }
             }
 
+            // Filtro de calificación de estrellas
+            const selectedStars = Array.from(
+                document.querySelectorAll('input[name="star"]:checked')
+            ).map(radio => radio.value);
+
+            if (selectedStars.length > 0) {
+                console.log(`Calificación de estrellas seleccionada: ${selectedStars.join(', ')}`);
+                const gameStars = `${game.Estrellas}-star`;
+                if (!selectedStars.includes(gameStars)) {
+                    console.log(`No coincide la calificación de estrellas: ${gameStars} con ${selectedStars}`);
+                    return false; // No cumple con el filtro de estrellas
+                }
+            }
+
             // Filtro de precio mínimo y máximo
             if (game.Precio < minPriceFilter || game.Precio > maxPriceFilter) {
                 console.log(`No coincide el precio: ${game.Precio} con rango [${minPriceFilter} - ${maxPriceFilter}]`);
                 return false;
             }
-            
+
             console.log(`Coincide: ${game.Titulo} con ${nameFilter}`);
             return true;
-            
+
         });
 
         // Generar tarjetas para los juegos filtradoss
