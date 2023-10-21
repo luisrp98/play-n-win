@@ -62,47 +62,56 @@ main {
         border: 0;
     }
 }
-#items-section {
+#new-item-section {
+    margin: 1rem 2rem 0 2rem;
     width: 100%;
-    padding: 2rem;
-    .item-card {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+
+    .new-item-card {
+        border: 4px solid rgb(248, 247, 247);
         padding: 1rem;
-        width: 100%;
-        height: 14rem;
+        box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+        -webkit-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+        -moz-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-        display: grid;
-        grid-template-columns: 20% 1fr 10%;
-        grid-template-rows: 15% 10% 20% 1fr;
-        grid-column-gap: 1rem;
-        grid-row-gap: 1rem;
-        background-image: linear-gradient(white 15%, $color-cerulean);
-        // background-color: $color-cerulean;
-        @include shadow($color-cerulean);
-
-        border-radius: 1.5rem;
-
-        img {
-            grid-row: 1 / 5;
+        .cover {
+            aspect-ratio: 3/4;
             width: 100%;
-            height: 100%;
             object-fit: contain;
+            margin: 0 auto 1rem auto;
         }
-        .item-card-title {
-            grid-column: 2 /3;
+        .inline {
+            h3,
+            p {
+                display: inline;
+            }
+            & p {
+                margin-left: 1rem;
+            }
         }
-        .item-card-price {
-            grid-column: 3 /4;
-            grid-row: 1;
+        .rate {
+            color: yellow;
+            font-size: 1.2rem;
         }
-        .item-card-plataform {
-            grid-row: 2/3;
-            grid-column: 2/3;
-        }
-        .item-card-desc {
-            grid-row: 3 / 5;
-            grid-column: 2 / span 3;
-            text-overflow: ellipsis;
-            overflow: hidden;
+        button {
+            margin: 1rem 0.5rem 0 auto;
+            background-color: $color-cerulean;
+            width: 40%;
+            height: 2rem;
+            border-radius: 1rem;
+            border: 0;
+            color: white;
+
+            &:hover {
+                background-color: $color-rich-black;
+            }
         }
     }
 }
