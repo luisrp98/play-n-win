@@ -70,8 +70,6 @@ searchForm.addEventListener('submit', (event) => {
             console.log(`Coincide: ${game.Titulo} con ${nameFilter}`)
             return true
         })
-
-
         // Generar tarjetas para los juegos filtradoss
         generateGameCards(filteredGames)
     } catch (error) {
