@@ -42,14 +42,15 @@ function generateGameCards(videojuegos) {
         price.classList.add('price')
         price.textContent = `${game.Precio}$`
 
+         // Calificación (Estrellas)
+         const rate = document.createElement('p');
+         rate.classList.add('rate');
+         const rating = game.Estrellas; // Valor de calificación del juego
+         rate.textContent = generateStars(rating);
+
         // Agregar elementos al div inline
         inline.appendChild(title)
         inline.appendChild(price)
-
-        const rate = document.createElement('p')
-        rate.classList.add('rate')
-        // Aquí ira una función para generar las estrellas
-        rate.textContent = '★ ★ ★ ★ ★' // Cambiar esto a dinamico
 
         // Crear la información de la plataforma
         const platform = document.createElement('p')
