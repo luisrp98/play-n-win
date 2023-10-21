@@ -107,38 +107,43 @@ main {
     border-radius: 1rem;
     border: 0; }
 
-#items-section {
+#new-item-section {
+  margin: 1rem 2rem 0 2rem;
   width: 100%;
-  padding: 2rem; }
-  #items-section .item-card {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem; }
+  #new-item-section .new-item-card {
+    border: 4px solid #f8f7f7;
     padding: 1rem;
-    width: 100%;
-    height: 14rem;
-    display: grid;
-    grid-template-columns: 20% 1fr 10%;
-    grid-template-rows: 15% 10% 20% 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    background-image: linear-gradient(white 15%, #477998);
-    box-shadow: 8px 9px 13px -2px rgba(71, 121, 152, 0.75);
-    -webkit-box-shadow: 8px 9px 13px -2px rgba(71, 121, 152, 0.75);
-    -moz-box-shadow: 8px 9px 13px -2px rgba(71, 121, 152, 0.75);
-    border-radius: 1.5rem; }
-    #items-section .item-card img {
-      grid-row: 1 / 5;
+    box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+    -webkit-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+    -moz-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
+    #new-item-section .new-item-card .cover {
+      aspect-ratio: 3/4;
       width: 100%;
-      height: 100%;
-      object-fit: contain; }
-    #items-section .item-card .item-card-title {
-      grid-column: 2 /3; }
-    #items-section .item-card .item-card-price {
-      grid-column: 3 /4;
-      grid-row: 1; }
-    #items-section .item-card .item-card-plataform {
-      grid-row: 2/3;
-      grid-column: 2/3; }
-    #items-section .item-card .item-card-desc {
-      grid-row: 3 / 5;
-      grid-column: 2 / span 3;
-      text-overflow: ellipsis;
-      overflow: hidden; }
+      object-fit: contain;
+      margin: 0 auto 1rem auto; }
+    #new-item-section .new-item-card .inline h3,
+    #new-item-section .new-item-card .inline p {
+      display: inline; }
+    #new-item-section .new-item-card .inline p {
+      margin-left: 1rem; }
+    #new-item-section .new-item-card .rate {
+      color: yellow;
+      font-size: 1.2rem; }
+    #new-item-section .new-item-card button {
+      margin: 1rem 0.5rem 0 auto;
+      background-color: #477998;
+      width: 40%;
+      height: 2rem;
+      border-radius: 1rem;
+      border: 0;
+      color: white; }
+      #new-item-section .new-item-card button:hover {
+        background-color: #011627; }
