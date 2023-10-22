@@ -147,3 +147,57 @@ main {
       color: white; }
       #new-item-section .new-item-card button:hover {
         background-color: #011627; }
+
+#sales-results {
+  margin: 1rem 0 0 2rem;
+  width: 100%;
+  height: 100%; }
+  #sales-results table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle; }
+    #sales-results table thead {
+      background-color: #011627;
+      color: white; }
+    #sales-results table tbody tr:nth-child(even) {
+      background-color: whitesmoke; }
+    #sales-results table tbody tr:nth-child(odd) {
+      background-color: gainsboro; }
+    #sales-results table th,
+    #sales-results table td {
+      border: 1px solid black; }
+    #sales-results table li {
+      list-style: none;
+      display: flex;
+      align-items: center; }
+      #sales-results table li img {
+        aspect-ratio: 3/4;
+        height: 5rem;
+        margin: 0.5rem 1rem 0.5rem 1rem; }
+    #sales-results table .th-cb {
+      width: 2%; }
+    #sales-results table .th-order {
+      width: 5%; }
+    #sales-results table .th-date {
+      width: 8%; }
+    #sales-results table .th-price {
+      width: 10%; }
+    #sales-results table .th-seller {
+      width: 10%; }
+
+.btn-section {
+  display: flex;
+  margin-bottom: 1rem; }
+  .btn-section .btn {
+    margin: auto;
+    width: 40%;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 0; }
+  .btn-section .btn-sell {
+    background-color: #00891b;
+    color: white; }
+  .btn-section .btn-delete {
+    background-color: #a10000;
+    color: white; }

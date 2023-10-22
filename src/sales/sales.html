@@ -23,7 +23,142 @@
             </nav>
         </header>
         <main>
-            <h1>Ventas</h1>
+            <div id="form">
+                <h2 id="form-title">Buscador</h2>
+                <form action="">
+                    <input type="text" placeholder="Buscar" />
+                    <div id="">
+                        <input type="radio" name="typesearch" value="title" id="title" />
+                        <label for="typesearch">Título</label>
+                        <input type="radio" name="typesearch" value="order" id="order" />
+                        <label for="typesearch">Num. de Orden</label>
+                    </div>
+                    <legend>Vendedor</legend>
+                    <select name="sellers" id="select-sellers">
+                        <option disabled selected>Selecciona una opción</option>
+
+                        <option value="Luis Romo">Luis Romo</option>
+                        <option value="Mariana Silva">Mariana Silva</option>
+                    </select>
+
+                    <legend>Plataforma:</legend>
+                    <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
+                    <label for="ps4">PlayStation 4</label><br />
+                    <input type="checkbox" name="plataforma[]" value="PS5" id="ps5" />
+                    <label for="ps5">PlayStation 5</label><br />
+                    <input
+                        type="checkbox"
+                        name="plataforma[]"
+                        value="Xbox One"
+                        id="xboxone"
+                    />
+                    <label for="xboxone">Xbox One</label><br />
+                    <input
+                        type="checkbox"
+                        name="plataforma[]"
+                        value="Xbox X/S"
+                        id="xboxseries"
+                    />
+                    <label for="xboxseries">Xbox X/S</label><br />
+                    <input type="checkbox" name="plataforma[]" value="PC" id="pc" />
+                    <label for="pc">PC</label><br />
+                    <input
+                        type="checkbox"
+                        name="plataforma[]"
+                        value="Switch"
+                        id="switch"
+                    />
+                    <label for="switch">Nintendo Switch</label><br />
+                    <legend>Precio:</legend>
+                    <div id="form-section-price">
+                        <input type="number" id="min-price" placeholder="$ Mín." />
+                        <input type="number" id="max-price" placeholder="$ Máx." />
+                    </div>
+                    <legend>Fecha:</legend>
+                    <div id="form-section-date">
+                        <input type="date" id="min-date" />
+                        <input type="date" id="max-date" />
+                    </div>
+                    <input type="submit" value="Buscar" id="btn-submit" />
+                    <input type="button" value="Limpiar filtro" id="btn-clear" />
+                </form>
+            </div>
+            <div id="sales-results">
+                <div class="btn-section">
+                    <input type="submit" value="Agregar venta" class="btn btn-sell" />
+                    <input type="submit" value="Eliminar ventas" class="btn btn-delete" />
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="th-cb"></th>
+                            <th class="th-order">Num. de Orden</th>
+                            <th class="th-date">Fecha</th>
+                            <th class="th-product">Producto</th>
+                            <th class="th-price">Precio</th>
+                            <th class="th-seller">Vendedor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>123456</td>
+                            <td>2021-01-01</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="../catalogue/covers/Animal.png"
+                                            alt=""
+                                        />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="../catalogue/covers/horizon.jpg"
+                                            alt=""
+                                        />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                    <li>
+                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>$1,299.00</td>
+                            <td>Luis Romo</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>123456</td>
+                            <td>2021-01-01</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="../catalogue/covers/Animal.png"
+                                            alt=""
+                                        />
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>$1,299.00</td>
+                            <td>Luis Romo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>
