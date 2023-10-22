@@ -1,17 +1,11 @@
-const modalbg = document.querySelector('.modal-bg')
-const modalgame = document.querySelector('.modal-game')
-
-modalbg.addEventListener('click', (e) => {
-    modalgame.remove()
-    modalbg.remove()
-})
-
-function crearModalGame() {
-    const modalGameContent = `
-<div class="modal-bg">
+export function crearModalGame() {
+    let modalbg = document.createElement('div')
+    modalbg.className = 'modal-bg'
+    let modalGameContent = `
                 <div class="modal-game">
                     <div class="div1">
-                        <img src="covers/TLOU.jpg" alt="" />
+                                        <img src="../assets/img/covers/TLOU.jpg" alt="" />
+
                     </div>
 
                     <div class="div2">
@@ -45,21 +39,21 @@ function crearModalGame() {
                         </p>
                     </div>
                 </div>
-            </div>
+       
 `
+    modalbg.innerHTML = modalGameContent
+    modalbg.onclick = function () {
+        modalRemove()
+    }
 
-    const main = document.getElementsByClassName('main')
-    main.appendChild(modalGameContent)
+    const main = document.querySelector('main')
+    main.appendChild(modalbg)
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtén todos los elementos con la clase 'item-card-btn'
-    const botones = document.querySelectorAll('.item-card-btn')
+function modalRemove() {
+    const modalbg = document.querySelector('.modal-bg')
+    const modalgame = document.querySelector('.modal-game')
 
-    // Agrega un event listener a cada botón
-    botones.forEach((boton) => {
-        boton.addEventListener('click', () => {
-            console.log('Hola')
-        })
-    })
-})
+    modalgame.remove()
+    modalbg.remove()
+}

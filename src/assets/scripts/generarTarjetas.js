@@ -1,4 +1,5 @@
 import { generateStars } from './generarEstrellas.js'
+import { crearModalGame } from './modal.js'
 
 const apiURL = 'https://6534761be1b6f4c59046be6a.mockapi.io/api/games/videojuegos'
 
@@ -51,7 +52,10 @@ export function generateGameCards(videojuegos) {
 
         const button = document.createElement('button')
         button.classList.add('item-card-btn')
-        button.textContent = 'Ver más'
+        button.onclick = function () {
+            crearModalGame()
+        }
+        button.textContent = 'Verrrr más'
 
         // Agregar elementos al card
         card.appendChild(image)
