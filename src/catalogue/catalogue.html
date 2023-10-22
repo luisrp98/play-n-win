@@ -29,11 +29,8 @@
                 <form action="">
                     <input type="text" placeholder="Buscar" list="gameNames" />
                     <datalist id="gameNames">
-                        <option value="Horizon Zero Dawn"></option>
-                        <option value="The Witcher 3: Wild Hunt"></option>
-                        <option value="Animal Crossing: New Horizons"></option>
-                        <option value="The Last of Us"></option>
-                    </datalist>
+                        <!-- Las opciones se generarán automáticamente aquí -->
+                    </datalist>                    
 
                     <legend>Plataforma:</legend>
                     <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
@@ -87,19 +84,13 @@
             </div>
             <div id="new-item-section">
                 <!-- Aquí se generan dinámicamente las tarjetas -->
-
-                <div class="new-item-card">
-                    <img class="cover" src="covers/Animal.png" alt="" />
-                    <div class="inline">
-                        <h3 class="title">Animal Crossing: New Horizon</h3>
-                        <p class="price">$49.99</p>
-                    </div>
-                    <p class="rate">★★★★★</p>
-                    <p class="plataforms">Nintendo Switch</p>
-                    <button>Ver más</button>
                 </div>
             </div>
         </main>
-        <script src="script.js"></script>
+        <script src="scripts/botonBuscar.js"></script>
+        <script src="scripts/botonLimpiar.js"></script>
+        <script src="scripts/generarTarjetas.js"></script>
+        <script src="scripts/generarEstrellas.js"></script>
+        <script src="scripts/autocompletar.js"></script>
     </body>
 </html>
