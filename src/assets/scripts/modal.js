@@ -37,19 +37,125 @@ export function crearModalGame(game) {
     modalbg.innerHTML = modalGameContent
 
     // Agrega un event listener al modalbg para cerrar el modal al hacer clic fuera
-    modalbg.addEventListener('click', function (event) {
-        if (event.target === modalbg) {
-            modalRemove()
-        }
-    })
+    modalRemove(modalbg)
 
     const main = document.querySelector('main')
     main.appendChild(modalbg)
 }
 
-export function modalRemove() {
-    const modalbg = document.querySelector('.modal-bg')
-    if (modalbg) {
-        modalbg.remove()
-    }
+export function crearModalSell() {
+    let modalbg = document.createElement('div')
+    modalbg.className = 'modal-bg'
+    let modalSellContent = `
+            <div class="modal-sell border-r-1">
+                <div class="modal-form f-display">
+                    <form action="" id="add-sale">
+                        <legend>Num. de orden</legend>
+                        <p id="modal-num-order">12849124</p>
+                        <legend>Producto</legend>
+                        <select name="" id="">
+                            <option disabled selected>Selecciona un producto</option>
+                            <!-- Aquí se agregan las opciones desde la API -->
+                        </select>
+                        <input type="number" name="" id="" />
+                        <input type="submit" value="Agregar" class="btn" />
+                        <legend>Vendedor</legend>
+                        <select name="" id="">
+                            <option disabled selected>Selecciona un vendedor</option>
+
+                            <option value="">Mariana Silva</option>
+                            <option value="">Luis Romo</option>
+                        </select>
+                        <legend>Fecha</legend>
+                        <input type="date" />
+                    </form>
+                    <div class="cart">
+                        <div class="cart-item">
+                            <table>
+                                <thead>
+                                    <th>Título</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td colspan="2"></td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-form-btn">
+                    <input
+                        type="submit"
+                        value="Agregar venta"
+                        id="btn-submit"
+                        class="btn btn-sell"
+                    />
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btn-clear"
+                        class="btn btn-delete"
+                    />
+                </div>
+            </div>
+        `
+    modalbg.innerHTML = modalSellContent
+
+    // Agrega un event listener al modalbg para cerrar el modal al hacer clic fuera
+    modalRemove(modalbg)
+
+    const main = document.querySelector('main')
+    main.appendChild(modalbg)
+}
+
+export function modalRemove(modalbg) {
+    modalbg.addEventListener('click', function (event) {
+        if (event.target === modalbg) {
+            if (modalbg) {
+                modalbg.remove()
+            }
+        }
+    })
 }
