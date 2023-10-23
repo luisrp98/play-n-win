@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Filtro de plataforma
-                if (selectedPlatforms.length > 0 && !selectedPlatforms.some((platform) => game.plataforma.includes(platform))) {
+                if (selectedPlatforms.length > 0 && !selectedPlatforms.every((platform) => game.plataforma.includes(platform))) {
                     return false; // No cumple con el filtro de plataforma
                 }
 
