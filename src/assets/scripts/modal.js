@@ -1,9 +1,8 @@
-import { generateStars } from './generarEstrellas.js';
-
+import { generateStars } from './generarEstrellas.js'
 
 export function crearModalGame(game) {
-    let modalbg = document.createElement('div');
-    modalbg.className = 'modal-bg';
+    let modalbg = document.createElement('div')
+    modalbg.className = 'modal-bg'
     let modalGameContent = `
         <div class="modal-game">
             <div class="div1">
@@ -15,7 +14,7 @@ export function crearModalGame(game) {
             </div>
             <div class="div3">
                 <h2>Calificación</h2>
-                <p>${generateStars(game.estrellas)}</p>
+                <p class='stars-rate'>${generateStars(game.estrellas)}</p>
             </div>
             <div class="div4">
                 <h2>Precio</h2>
@@ -27,30 +26,30 @@ export function crearModalGame(game) {
             </div>
             <div class="div6">
                 <h2>Tags</h2>
-                ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                ${game.tags.map((tag) => `<span class="tag">${tag}</span>`).join('')}
             </div>
             <div class="div7">
                 <h2>Descripción</h2>
                 <p>${game.descripcion}</p>
             </div>
         </div>
-    `;
-    modalbg.innerHTML = modalGameContent;
+    `
+    modalbg.innerHTML = modalGameContent
 
     // Agrega un event listener al modalbg para cerrar el modal al hacer clic fuera
     modalbg.addEventListener('click', function (event) {
         if (event.target === modalbg) {
-            modalRemove();
+            modalRemove()
         }
-    });
+    })
 
-    const main = document.querySelector('main');
-    main.appendChild(modalbg);
+    const main = document.querySelector('main')
+    main.appendChild(modalbg)
 }
 
 export function modalRemove() {
-    const modalbg = document.querySelector('.modal-bg');
+    const modalbg = document.querySelector('.modal-bg')
     if (modalbg) {
-        modalbg.remove();
+        modalbg.remove()
     }
 }

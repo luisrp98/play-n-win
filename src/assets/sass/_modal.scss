@@ -1,0 +1,94 @@
+@import '_variables.scss';
+.modal-bg {
+    background-color: #000000bf;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+.modal-game {
+    background-color: white;
+    display: grid;
+    width: 60rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    img {
+        aspect-ratio: 3/4;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .tag {
+        margin-right: 0.5rem;
+        border: 1px solid rgb(255, 0, 0);
+        border-radius: 1rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .div1 {
+        grid-area: 1 / 1 / 11 / 3;
+        margin-right: 2rem;
+    }
+    .div2 {
+        grid-area: 1 / 3 / 2 / 6;
+    }
+    .div3 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+    .div4 {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+    .div5 {
+        grid-area: 3 / 3 / 4 / 6;
+    }
+    .div6 {
+        grid-area: 4 / 3 / 5 / 6;
+    }
+    .div7 {
+        grid-area: 5 / 3 / 7 / 6;
+    }
+}
+.modal-sell {
+    background-color: white;
+    width: 60rem;
+    padding: 1.5rem;
+
+    legend {
+        font-size: 1.5rem;
+        font-weight: $font-size-bold;
+    }
+    .modal-form {
+        justify-content: space-between;
+        input[type='number'] {
+            width: 2rem;
+        }
+        input[type='submit'] {
+            background-color: $color-green;
+            color: $color-white;
+            padding: 0 0.5rem;
+            @include hover($color-green-hover);
+        }
+    }
+    .cart {
+        margin-left: 3rem;
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 1rem;
+            td {
+                text-align: center;
+            }
+        }
+        .cart-total {
+            justify-content: space-between;
+        }
+    }
+}

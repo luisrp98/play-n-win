@@ -9,7 +9,7 @@ export function generateGameCards(videojuegos) {
 
     videojuegos.forEach((game) => {
         const card = document.createElement('div')
-        card.classList.add('new-item-card')
+        card.classList.add('new-item-card', 'f-display')
 
         // Crear la imagen
         const image = document.createElement('img')
@@ -37,13 +37,8 @@ export function generateGameCards(videojuegos) {
 
         // Calificación (Estrellas)
         const rate = document.createElement('p')
-        rate.classList.add('rate')
+        rate.classList.add('stars-rate')
         rate.textContent = generateStars(game.estrellas)
-
-        // Agregar elementos al div inline
-        inline.appendChild(title)
-        inline.appendChild(price)
-        inline.appendChild(rate)
 
         // Crear la información de la plataforma
         const platform = document.createElement('p')
@@ -52,15 +47,16 @@ export function generateGameCards(videojuegos) {
 
         //MODAL
         const button = document.createElement('button')
-        button.classList.add('item-card-btn')
+        button.classList.add('item-card-btn', 'btn')
         button.onclick = function () {
-            crearModalGame(game);
+            crearModalGame(game)
         }
         button.textContent = 'Ver más'
 
         // Agregar elementos al card
         card.appendChild(image)
         card.appendChild(inline)
+        card.appendChild(rate)
         card.appendChild(platform)
         card.appendChild(button)
 

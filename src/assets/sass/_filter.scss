@@ -1,0 +1,51 @@
+#filter {
+    width: 20%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: $color-cerulean;
+    @include shadow($color-cerulean);
+    color: white;
+    height: 100%;
+
+    #filter-title {
+        text-align: center;
+    }
+    #filter-search {
+        width: 100%;
+    }
+    #filter-sellers {
+        width: 100%;
+    }
+    legend {
+        font-size: 1.2rem;
+        font-weight: $font-size-bold;
+        margin: 1rem 0 0.1rem 0;
+    }
+
+    #filter-price {
+        display: flex;
+        justify-content: space-around;
+        input {
+            width: 48%;
+        }
+    }
+    #filter-stars {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        input {
+            margin-right: 0.5rem;
+        }
+    }
+
+    #btn-submit {
+        background-color: $color-rich-black;
+        color: white;
+        width: 100%;
+        @include hover($color-rich-black-hover);
+    }
+    #btn-clear {
+        background-color: white;
+        width: 100%;
+        @include hover($color-white-hover);
+    }
+}

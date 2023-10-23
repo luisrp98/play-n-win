@@ -6,18 +6,40 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     font-size: 16px;
+    font-family: $font-family;
 }
-
 main {
-    background-color: $workarea-background-color;
-    box-shadow: rgba(255, 255, 255, 0.25) 0 0 100px 0;
-    min-height: $workarea-min-height;
+    margin: 1rem 2rem 0 2rem;
 }
-
-h1 {
-    font-size: 1.75rem;
-    margin-bottom: 20px;
+select,
+input {
+    font-family: inherit;
+}
+.f-display {
+    display: flex;
+}
+.border-r-1 {
+    border-radius: 1rem;
+}
+.stars-rate {
+    color: orange;
+    font-size: 1.2rem;
+}
+.btn {
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 0;
+}
+.btn-sell {
+    background-color: $color-green;
+    color: white;
+    @include hover($color-green-hover);
+}
+.btn-delete {
+    background-color: $color-red;
+    color: white;
+    @include hover($color-red-hover);
 }

@@ -2,66 +2,7 @@
 p {
     background-color: blue($color: #000000);
 }
-main {
-    display: flex;
-    font-family: $font-family;
-    margin: 1rem 2rem 0 2rem;
-}
-#form {
-    width: 20%;
-    padding: 1rem;
-    margin-top: 1rem;
-    background-color: $color-cerulean;
-    @include shadow($color-cerulean);
-    color: white;
-    border-radius: 1rem;
-    height: 100%;
-    input {
-        font-family: inherit;
-    }
-    legend {
-        margin: 1rem 0 0.5rem 0;
-    }
-    #search {
-        width: 100%;
-    }
-    #form-title {
-        text-align: center;
-    }
-    #form-section-price {
-        display: flex;
-        justify-content: space-around;
-        input {
-            width: 45%;
-        }
-    }
-    #form-section-stars {
-        display: grid;
-        grid-template-columns: auto 1fr; /* Primera columna más pequeña */
-        input {
-            margin-right: 0.5rem;
-        }
-        color: yellow;
-    }
 
-    #btn-submit {
-        margin-top: 1rem;
-        background-color: $color-rich-black;
-        color: white;
-        width: 100%;
-        height: 2rem;
-        border-radius: 1rem;
-        border: 0;
-    }
-    #btn-clear {
-        margin-top: 1rem;
-        background-color: white;
-        width: 100%;
-        height: 2rem;
-        border-radius: 1rem;
-        border: 0;
-    }
-}
 #new-item-section {
     margin: 1rem 2rem 0 2rem;
     width: 100%;
@@ -72,12 +13,10 @@ main {
     grid-row-gap: 1rem;
 
     .new-item-card {
-        border: 4px solid rgb(248, 247, 247);
+        border: 4px solid #ededed;
         padding: 1rem;
-        box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
-        -webkit-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
-        -moz-box-shadow: 6px 13px 10px 6px rgba(217, 217, 217, 0.92);
-        display: flex;
+        @include shadow($color-white-hover);
+
         flex-direction: column;
         align-items: flex-start;
 
@@ -96,84 +35,12 @@ main {
                 margin-left: 1rem;
             }
         }
-        .rate {
-            color: yellow;
-            font-size: 1.2rem;
-        }
         button {
             margin: 1rem 0.5rem 0 auto;
             background-color: $color-cerulean;
             width: 40%;
-            height: 2rem;
-            border-radius: 1rem;
-            border: 0;
             color: white;
-
-            &:hover {
-                background-color: $color-rich-black;
-            }
+            @include hover($color-rich-black-hover);
         }
-    }
-}
-.modal-bg {
-    background-color: #000000bf;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-}
-.modal-game {
-    background-color: white;
-    display: grid;
-    width: 60rem;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    // margin: 14rem 14rem;
-    // padding: 2rem;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-
-    img {
-        aspect-ratio: 3/4;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-    .tag {
-        margin-right: 0.5rem;
-        border: 1px solid rgb(255, 0, 0);
-        border-radius: 1rem;
-        padding: 0.2rem 0.5rem;
-    }
-    .div1 {
-        grid-area: 1 / 1 / 11 / 3;
-        margin-right: 2rem;
-    }
-    .div2 {
-        grid-area: 1 / 3 / 2 / 6;
-    }
-    .div3 {
-        grid-area: 2 / 3 / 3 / 4;
-        p {
-            color: yellow;
-        }
-    }
-    .div4 {
-        grid-area: 2 / 4 / 3 / 5;
-    }
-    .div5 {
-        grid-area: 3 / 3 / 4 / 6;
-    }
-    .div6 {
-        grid-area: 4 / 3 / 5 / 6;
-    }
-    .div7 {
-        grid-area: 5 / 3 / 7 / 6;
     }
 }

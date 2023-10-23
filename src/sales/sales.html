@@ -22,21 +22,19 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <div id="form">
-                <h2 id="form-title">Buscador</h2>
+        <main class="f-display">
+            <div id="filter" class="border-r-1">
+                <h2 id="filter-title">Buscador</h2>
                 <form action="">
-                    <input type="text" placeholder="Buscar" />
-                    <div id="">
-                        <input type="radio" name="typesearch" value="title" id="title" />
-                        <label for="typesearch">Título</label>
-                        <input type="radio" name="typesearch" value="order" id="order" />
-                        <label for="typesearch">Num. de Orden</label>
-                    </div>
-                    <legend>Vendedor</legend>
-                    <select name="sellers" id="select-sellers">
-                        <option disabled selected>Selecciona una opción</option>
+                    <input type="text" placeholder="Buscar" id="filter-search" />
+                    <input type="radio" name="typesearch" value="title" id="title" />
+                    <label for="typesearch">Título</label>
+                    <input type="radio" name="typesearch" value="order" id="order" />
+                    <label for="typesearch">Num. de Orden</label>
 
+                    <legend>Vendedor</legend>
+                    <select name="sellers" id="filter-sellers">
+                        <option disabled selected>Selecciona una opción</option>
                         <option value="Luis Romo">Luis Romo</option>
                         <option value="Mariana Silva">Mariana Silva</option>
                     </select>
@@ -70,7 +68,7 @@
                     />
                     <label for="switch">Nintendo Switch</label><br />
                     <legend>Precio:</legend>
-                    <div id="form-section-price">
+                    <div id="filter-price">
                         <input type="number" id="min-price" placeholder="$ Mín." />
                         <input type="number" id="max-price" placeholder="$ Máx." />
                     </div>
@@ -79,8 +77,13 @@
                         <input type="date" id="min-date" />
                         <input type="date" id="max-date" />
                     </div>
-                    <input type="submit" value="Buscar" id="btn-submit" />
-                    <input type="button" value="Limpiar filtro" id="btn-clear" />
+                    <input type="submit" value="Buscar" id="btn-submit" class="btn" />
+                    <input
+                        type="button"
+                        value="Limpiar filtro"
+                        id="btn-clear"
+                        class="btn"
+                    />
                 </form>
             </div>
             <div id="sales-results">
@@ -146,17 +149,18 @@
             </div>
         </main>
         <div class="modal-bg">
-            <div class="modal-sell">
-                <div class="modal-form">
+            <div class="modal-sell border-r-1">
+                <div class="modal-form f-display">
                     <form action="" id="add-sale">
                         <legend>Num. de orden</legend>
                         <p id="modal-num-order">12849124</p>
                         <legend>Producto</legend>
                         <select name="" id="">
                             <option disabled selected>Selecciona un producto</option>
+                            <!-- Aquí se agregan las opciones desde la API -->
                         </select>
                         <input type="number" name="" id="" />
-                        <input type="submit" value="Agregar" />
+                        <input type="submit" value="Agregar" class="btn" />
                         <legend>Vendedor</legend>
                         <select name="" id="">
                             <option disabled selected>Selecciona un vendedor</option>
@@ -169,23 +173,74 @@
                     </form>
 
                     <div class="cart">
-                        <div class="cart-items">
-                            <div class="cart-items-row">
-                                <p>Animal Crossing: New Horizon</p>
-                                <p>$1,300.00</p>
-                                <p>2</p>
-                                <p>$2,600.00</p>
-                            </div>
-                        </div>
-                        <div class="cart-total">
-                            <p>Total</p>
-                            <p>$2,600.00</p>
+                        <div class="cart-item">
+                            <table>
+                                <thead>
+                                    <th>Título</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Animal Crossing: New Horizon</td>
+                                        <td>$1,299.00</td>
+                                        <td>1</td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td colspan="2"></td>
+                                        <td>$1,299.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="modal-form-btn">
-                    <input type="submit" value="Agregar venta" id="btn-submit" />
-                    <input type="button" value="Cancelar" id="btn-clear" />
+                    <input
+                        type="submit"
+                        value="Agregar venta"
+                        id="btn-submit"
+                        class="btn btn-sell"
+                    />
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btn-clear"
+                        class="btn btn-delete"
+                    />
                 </div>
             </div>
         </div>
