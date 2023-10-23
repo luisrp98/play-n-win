@@ -51,18 +51,17 @@ export function crearModalSell() {
                 <div class="modal-form f-display">
                     <form action="" id="add-sale">
                         <legend>Num. de orden</legend>
-                        <p id="modal-num-order">12849124</p>
+                        <p id="modal-num-order"></p>
                         <legend>Producto</legend>
-                        <select name="" id="">
+                        <select name="producto" id="producto-select">
                             <option disabled selected>Selecciona un producto</option>
                             <!-- Aquí se agregan las opciones desde la API -->
                         </select>
-                        <input type="number" name="" id="" />
-                        <input type="submit" value="Agregar" class="btn" />
+                        <input type="number" name="cantidad" id="cantidad-input" />
+                        <input type="button" value="Agregar" class="btn" id="btn-agregar" />                        
                         <legend>Vendedor</legend>
-                        <select name="" id="">
+                        <select name="vendedor" id="vendedor-select">
                             <option disabled selected>Selecciona un vendedor</option>
-
                             <option value="">Mariana Silva</option>
                             <option value="">Luis Romo</option>
                         </select>
@@ -78,48 +77,8 @@ export function crearModalSell() {
                                     <th>Cantidad</th>
                                     <th>Subtotal</th>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Animal Crossing: New Horizon</td>
-                                        <td>$1,299.00</td>
-                                        <td>1</td>
-                                        <td>$1,299.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td colspan="2"></td>
-                                        <td>$1,299.00</td>
-                                    </tr>
+                                <tbody id="cart-body">
+                                <!-- Aquí se agregarán las filas de productos -->
                                 </tbody>
                             </table>
                         </div>
@@ -127,7 +86,7 @@ export function crearModalSell() {
                 </div>
                 <div class="modal-form-btn">
                     <input
-                        type="submit"
+                        type="button"
                         value="Agregar venta"
                         id="btn-submit"
                         class="btn btn-sell"
@@ -140,15 +99,60 @@ export function crearModalSell() {
                     />
                 </div>
             </div>
-        `
+        `;
     modalbg.innerHTML = modalSellContent
 
     // Agrega un event listener al modalbg para cerrar el modal al hacer clic fuera
     modalRemove(modalbg)
 
+    // Dispara el evento personalizado 'modalcreated' para indicar que el modal se ha creado
+    const modalCreatedEvent = new Event('modalcreated');
+    document.dispatchEvent(modalCreatedEvent);
+
     const main = document.querySelector('main')
     main.appendChild(modalbg)
+
+    // Realiza una solicitud a la API para obtener la lista de ventas
+    fetch('https://6534761be1b6f4c59046be6a.mockapi.io/api/games/ventas')
+        .then(response => response.json())
+        .then(data => {
+            // Encuentra el número de orden más alto
+            let maxNumeroOrden = 0;
+            data.forEach(venta => {
+                const numeroOrden = parseInt(venta["numero-de-orden"]);
+                if (!isNaN(numeroOrden) && numeroOrden > maxNumeroOrden) {
+                    maxNumeroOrden = numeroOrden;
+                }
+            });
+
+            // Incrementa el número más alto en 1 para obtener el nuevo número de orden
+            const newNumeroOrden = maxNumeroOrden + 1;
+
+            // Establece el nuevo número de orden en el elemento HTML
+            const modalNumOrder = document.getElementById('modal-num-order');
+            modalNumOrder.textContent = newNumeroOrden;
+        })
+        .catch(error => {
+            console.error('Error al cargar la lista de ventas desde la API: ', error);
+        });
 }
+
+
+// Cargar la lista de productos desde la API
+fetch('https://6534761be1b6f4c59046be6a.mockapi.io/api/games/videojuegos')
+    .then(response => response.json())
+    .then(data => {
+        const selectProducto = document.querySelector('#producto-select');
+        selectProducto.innerHTML = ''; // Limpia las opciones existentes
+        data.forEach(producto => {
+            const option = document.createElement('option');
+            option.value = producto.titulo;
+            option.textContent = producto.titulo;
+            selectProducto.appendChild(option);
+        });
+    })
+    .catch(error => console.error('Error al cargar la lista de productos: ', error));
+
 
 export function modalRemove(modalbg) {
     modalbg.addEventListener('click', function (event) {
