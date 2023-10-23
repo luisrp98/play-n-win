@@ -49,7 +49,7 @@ export function generateGameCards(videojuegos) {
         const button = document.createElement('button')
         button.classList.add('item-card-btn', 'btn')
         button.onclick = function () {
-            createModal(game, 'modal-game')
+            createModal('modal-game', game)
         }
         button.textContent = 'Ver más'
 
