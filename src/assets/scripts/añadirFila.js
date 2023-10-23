@@ -36,6 +36,14 @@ export function addRowCart() {
                     // Agrega la fila a la tabla
                     cartBody.appendChild(newRow)
 
+                    const total = document.getElementById('modal-total-amount')
+                    let totalActual = parseFloat(total.textContent.replace('$', '')) // Convierte el contenido actual a un número
+                    console.log(totalActual + typeof totalActual)
+                    console.log(subtotal + typeof subtotal)
+                    const nuevoTotal = totalActual + parseFloat(subtotal.toFixed(2))
+                    console.log(nuevoTotal + typeof nuevoTotal)
+                    total.innerHTML = `$${nuevoTotal}`
+
                     // Limpia los campos del formulario
                     productoSelect.selectedIndex = 0
                     cantidadInput.value = ''
@@ -50,6 +58,6 @@ export function addRowCart() {
                 )
             })
     } else {
-        console.error('Por favor, seleccione un producto y una cantidad válida.')
+        alert('Por favor introduce un item y cantidad correctamente')
     }
 }
