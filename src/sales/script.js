@@ -1,7 +1,8 @@
+import { crearModalSell } from '../assets/scripts/modal.js'
 const btn_sell = document.querySelector('.btn-sell')
 
 btn_sell.addEventListener('click', () => {
-    console.log('Sell')
+    crearModalSell()
 })
 
 // Selecciona el botón "Cancelar" en el modal

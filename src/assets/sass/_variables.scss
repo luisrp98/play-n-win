@@ -1,24 +1,41 @@
+// Colores
 $color-rich-black: #011627;
-$color-red: #ff0022;
-$color-tea: #aec792;
+$color-rich-black-hover: #002b4f;
 $color-cerulean: #477998;
+$color-white: white;
+$color-white-hover: rgb(218, 218, 218);
+$color-green: #00891b;
+$color-green-hover: #00b324;
+$color-red: #a10000;
+$color-red-hover: #c50000;
 
+// Fuente
 $font-family: 'Poppins', sans-serif;
 $font-size-light: 200;
 $font-size-regular: 400;
 $font-size-bold: 700;
-
-$background-color: #f3f6f9;
 $font-color: #000000;
 $font-color-light: #fff;
 
 $header-height: 100px; //Altura del encabezado
 
-$workarea-background-color: #ffffff;
-$workarea-min-height: calc(100vh - 136px); //Altura mínima del área de trabajo
-
 @mixin shadow($color) {
     box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
     -webkit-box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
     -moz-box-shadow: 8px 9px 13px -2px rgba($color, 0.75);
+}
+
+@mixin hover($color) {
+    transition-duration: 0.2s;
+
+    &:hover {
+        background-color: $color;
+    }
+}
+
+@mixin transition() {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }

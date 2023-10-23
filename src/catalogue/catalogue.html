@@ -23,11 +23,16 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <div id="form">
-                <h2 id="form-title">Buscador</h2>
+        <main class="f-display">
+            <div id="filter" class="border-r-1">
+                <h2 id="filter-title">Buscador</h2>
                 <form action="">
-                    <input type="text" placeholder="Buscar" list="gameNames" />
+                    <input
+                        type="text"
+                        id="filter-search"
+                        placeholder="Buscar"
+                        list="gameNames"
+                    />
                     <datalist id="gameNames">
                         <!-- Las opciones se generarán automáticamente aquí -->
                     </datalist>
@@ -61,28 +66,33 @@
                     />
                     <label for="switch">Nintendo Switch</label><br />
                     <legend>Precio:</legend>
-                    <div id="form-section-price">
+                    <div id="filter-price">
                         <input type="number" id="min-price" placeholder="$ Mín." />
                         <input type="number" id="max-price" placeholder="$ Máx." />
                     </div>
                     <legend>Calificación:</legend>
-                    <div id="form-section-stars">
+                    <div id="filter-stars">
                         <input type="radio" name="star" value="1-star" id="1-star" />
-                        <label for="1-star">★</label>
+                        <label for="1-star" class="stars-rate">★</label>
                         <input type="radio" name="star" value="2-star" id="2-star" />
-                        <label for="2-star">★★</label>
+                        <label for="2-star" class="stars-rate">★★</label>
                         <input type="radio" name="star" value="3-star" id="3-star" />
-                        <label for="3-star">★★★</label>
+                        <label for="3-star" class="stars-rate">★★★</label>
                         <input type="radio" name="star" value="4-star" id="4-star" />
-                        <label for="4-star">★★★★</label>
+                        <label for="4-star" class="stars-rate">★★★★</label>
                         <input type="radio" name="star" value="5-star" id="5-star" />
-                        <label for="5-star">★★★★★</label>
+                        <label for="5-star" class="stars-rate">★★★★★</label>
                     </div>
-                    <input type="submit" value="Buscar" id="btn-submit" />
-                    <input type="button" value="Limpiar filtro" id="btn-clear" />
+                    <input type="submit" value="Buscar" id="btn-submit" class="btn" />
+                    <input
+                        type="button"
+                        value="Limpiar filtro"
+                        id="btn-clear"
+                        class="btn"
+                    />
                 </form>
             </div>
-            <div id="new-item-section">
+            <div id="new-item-section" class="f-display">
                 <!-- Aquí se generan dinámicamente las tarjetas -->
             </div>
         </main>
