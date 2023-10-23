@@ -18,11 +18,9 @@ export function addRowCart() {
                 if (productoInfo) {
                     // Obtiene el precio del producto desde el objeto
                     const precio = productoInfo.precio
-                    console.log('Precio del producto: ' + precio)
 
                     // Calcula el subtotal
                     const subtotal = precio * cantidadInput.value
-                    console.log('subtotal' + subtotal)
 
                     // Crea una nueva fila con los datos del producto
                     const newRow = document.createElement('tr')
@@ -38,10 +36,7 @@ export function addRowCart() {
 
                     const total = document.getElementById('modal-total-amount')
                     let totalActual = parseFloat(total.textContent.replace('$', '')) // Convierte el contenido actual a un número
-                    console.log(totalActual + typeof totalActual)
-                    console.log(subtotal + typeof subtotal)
                     const nuevoTotal = totalActual + parseFloat(subtotal.toFixed(2))
-                    console.log(nuevoTotal + typeof nuevoTotal)
                     total.innerHTML = `$${nuevoTotal}`
 
                     // Limpia los campos del formulario
