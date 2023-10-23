@@ -250,3 +250,34 @@ main {
   .btn-section .btn-delete {
     background-color: #a10000;
     color: white; }
+
+.modal-bg {
+  background-color: #000000bf;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0; }
+
+.modal-sell {
+  background-color: white;
+  width: 60rem;
+  padding: 1.5rem;
+  border-radius: 1rem; }
+
+.modal-form {
+  display: flex;
+  justify-content: space-between; }
+
+.modal-form-btn {
+  margin-top: 1rem; }
+
+.cart-items-row {
+  display: flex; }
+
+.cart-total {
+  display: flex;
+  justify-content: space-between; }

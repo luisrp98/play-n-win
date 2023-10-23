@@ -107,45 +107,31 @@
                             <td>
                                 <ul>
                                     <li>
-                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
-                                        <p>Call of Duty: Black Ops Cold War</p>
-                                    </li>
-                                    <li>
                                         <img
-                                            src="../catalogue/covers/Animal.png"
+                                            src="../assets/img/covers/beyond.jpg"
                                             alt=""
                                         />
                                         <p>Call of Duty: Black Ops Cold War</p>
                                     </li>
                                     <li>
                                         <img
-                                            src="../catalogue/covers/horizon.jpg"
+                                            src="../assets/img/covers/beyond.jpg"
                                             alt=""
                                         />
-                                        <p>Call of Duty: Black Ops Cold War</p>
-                                    </li>
-                                    <li>
-                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
-                                        <p>Call of Duty: Black Ops Cold War</p>
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>$1,299.00</td>
-                            <td>Luis Romo</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" /></td>
-                            <td>123456</td>
-                            <td>2021-01-01</td>
-                            <td>
-                                <ul>
-                                    <li>
-                                        <img src="../catalogue/covers/TLOU.jpg" alt="" />
+
                                         <p>Call of Duty: Black Ops Cold War</p>
                                     </li>
                                     <li>
                                         <img
-                                            src="../catalogue/covers/Animal.png"
+                                            src="../assets/img/covers/beyond.jpg"
+                                            alt=""
+                                        />
+
+                                        <p>Call of Duty: Black Ops Cold War</p>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="../assets/img/covers/beyond.jpg"
                                             alt=""
                                         />
                                         <p>Call of Duty: Black Ops Cold War</p>
@@ -159,6 +145,50 @@
                 </table>
             </div>
         </main>
+        <div class="modal-bg">
+            <div class="modal-sell">
+                <div class="modal-form">
+                    <form action="" id="add-sale">
+                        <legend>Num. de orden</legend>
+                        <p id="modal-num-order">12849124</p>
+                        <legend>Producto</legend>
+                        <select name="" id="">
+                            <option disabled selected>Selecciona un producto</option>
+                        </select>
+                        <input type="number" name="" id="" />
+                        <input type="submit" value="Agregar" />
+                        <legend>Vendedor</legend>
+                        <select name="" id="">
+                            <option disabled selected>Selecciona un vendedor</option>
+
+                            <option value="">Mariana Silva</option>
+                            <option value="">Luis Romo</option>
+                        </select>
+                        <legend>Fecha</legend>
+                        <input type="date" />
+                    </form>
+
+                    <div class="cart">
+                        <div class="cart-items">
+                            <div class="cart-items-row">
+                                <p>Animal Crossing: New Horizon</p>
+                                <p>$1,300.00</p>
+                                <p>2</p>
+                                <p>$2,600.00</p>
+                            </div>
+                        </div>
+                        <div class="cart-total">
+                            <p>Total</p>
+                            <p>$2,600.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-form-btn">
+                    <input type="submit" value="Agregar venta" id="btn-submit" />
+                    <input type="button" value="Cancelar" id="btn-clear" />
+                </div>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
