@@ -50,12 +50,13 @@ export function generateGameCards(videojuegos) {
         platform.classList.add('item-card-plataform')
         platform.textContent = `Plataformas: ${game.plataforma.join(', ')}`
 
+        //MODAL
         const button = document.createElement('button')
         button.classList.add('item-card-btn')
         button.onclick = function () {
-            crearModalGame()
+            crearModalGame(game);
         }
-        button.textContent = 'Verrrr más'
+        button.textContent = 'Ver más'
 
         // Agregar elementos al card
         card.appendChild(image)

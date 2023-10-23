@@ -1,59 +1,56 @@
-export function crearModalGame() {
-    let modalbg = document.createElement('div')
-    modalbg.className = 'modal-bg'
+import { generateStars } from './generarEstrellas.js';
+
+
+export function crearModalGame(game) {
+    let modalbg = document.createElement('div');
+    modalbg.className = 'modal-bg';
     let modalGameContent = `
-                <div class="modal-game">
-                    <div class="div1">
-                                        <img src="../assets/img/covers/TLOU.jpg" alt="" />
+        <div class="modal-game">
+            <div class="div1">
+                <img src="${game.imagen}" alt="${game.titulo}" />
+            </div>
+            <div class="div2">
+                <h2>Título</h2>
+                <p>${game.titulo}</p>
+            </div>
+            <div class="div3">
+                <h2>Calificación</h2>
+                <p>${generateStars(game.estrellas)}</p>
+            </div>
+            <div class="div4">
+                <h2>Precio</h2>
+                <p>$${game.precio}</p>
+            </div>
+            <div class="div5">
+                <h2>Plataformas:</h2>
+                <p>${game.plataforma.join(', ')}</p>
+            </div>
+            <div class="div6">
+                <h2>Tags</h2>
+                ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+            <div class="div7">
+                <h2>Descripción</h2>
+                <p>${game.descripcion}</p>
+            </div>
+        </div>
+    `;
+    modalbg.innerHTML = modalGameContent;
 
-                    </div>
+    // Agrega un event listener al modalbg para cerrar el modal al hacer clic fuera
+    modalbg.addEventListener('click', function (event) {
+        if (event.target === modalbg) {
+            modalRemove();
+        }
+    });
 
-                    <div class="div2">
-                        <h2>Título</h2>
-                        <p>Animal Crossing: New Horizon</p>
-                    </div>
-                    <div class="div3">
-                        <h2>Calificación</h2>
-                        <p>★★★★</p>
-                    </div>
-                    <div class="div4">
-                        <h2>Precio</h2>
-                        <p>$59.99</p>
-                    </div>
-                    <div class="div5">
-                        <h2>Plataformas:</h2>
-                        <p>Nintendo Switch</p>
-                    </div>
-                    <div class="div6">
-                        <h2>Tags</h2>
-                        <span class="tag">Simulación</span><span class="tag">Social</span
-                        ><span class="tag">Multijugador</span>
-                    </div>
-                    <div class="div7">
-                        <h2>Descripción</h2>
-                        <p>
-                            Descripción: Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Quisquam, voluptatum. Quisquam voluptatum,
-                            quibusdam, quia, voluptates quod exercitationem quos voluptas
-                            quas quibusdam, quia, voluptates
-                        </p>
-                    </div>
-                </div>
-       
-`
-    modalbg.innerHTML = modalGameContent
-    modalbg.onclick = function () {
-        modalRemove()
-    }
-
-    const main = document.querySelector('main')
-    main.appendChild(modalbg)
+    const main = document.querySelector('main');
+    main.appendChild(modalbg);
 }
 
-function modalRemove() {
-    const modalbg = document.querySelector('.modal-bg')
-    const modalgame = document.querySelector('.modal-game')
-
-    modalgame.remove()
-    modalbg.remove()
+export function modalRemove() {
+    const modalbg = document.querySelector('.modal-bg');
+    if (modalbg) {
+        modalbg.remove();
+    }
 }
