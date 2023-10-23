@@ -5,7 +5,9 @@ export function addSale() {
 
     const tbody = document.getElementById('cart-body')
     const rows = tbody.getElementsByTagName('tr')
+    const total = document.getElementById('modal-total-amount').value
     const rowData = []
+
     // Recorre todas las filas
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i]
@@ -25,15 +27,6 @@ export function addSale() {
                 quantity: quantity,
                 subtotal: subtotal,
             }
-            alert(
-                rowObject.title +
-                    ' ' +
-                    rowObject.price +
-                    ' ' +
-                    rowObject.quantity +
-                    ' ' +
-                    rowObject.subtotal
-            )
             // Agrega el objeto al array
             rowData.push(rowObject)
         }
@@ -43,16 +36,24 @@ export function addSale() {
         productos: [], // Inicializa un array vacío para los productos
         vendedor: vendedorSelect,
         fecha: fechaInput,
-        total: total.toFixed(2),
+        total: total,
     }
 
     nuevaVenta.productos = rowData
-    console.log(nuevaVenta)
 
-    // if (vendedorSelect === 'Selecciona una opción' || fechaInput === '') {
-    //     alert('Por favor, completa la información.')
-    //     return
-    // }
-
-    // alert(numeroOrden + vendedorSelect + fechaInput)
+    fetch('https://6534761be1b6f4c59046be6a.mockapi.io/api/games/ventas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(nuevaVenta),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Venta agregada exitosamente:', data)
+            // Cierra el modal o realiza cualquier otra acción necesaria
+        })
+        .catch((error) => {
+            console.error('Error al agregar la venta:', error)
+        })
 }
