@@ -27,7 +27,13 @@
                 <h2 id="filter-title">Buscador</h2>
                 <form action="">
                     <input type="text" placeholder="Buscar" id="filter-search" />
-                    <input type="radio" name="typesearch" value="title" id="title" />
+                    <input
+                        type="radio"
+                        name="typesearch"
+                        value="title"
+                        id="title"
+                        disabled
+                    />
                     <label for="typesearch">Título</label>
                     <input type="radio" name="typesearch" value="order" id="order" />
                     <label for="typesearch">Num. de Orden</label>
@@ -40,20 +46,31 @@
                     </select>
                     <legend>Precio:</legend>
                     <div id="filter-price">
-                        <input type="number" id="min-price" placeholder="$ Mín." />
-                        <input type="number" id="max-price" placeholder="$ Máx." />
+                        <input
+                            type="number"
+                            id="min-price"
+                            placeholder="$ Mín."
+                            disabled
+                        />
+                        <input
+                            type="number"
+                            id="max-price"
+                            placeholder="$ Máx."
+                            disabled
+                        />
                     </div>
                     <legend>Fecha:</legend>
                     <div id="form-section-date">
-                        <input type="date" id="min-date" />
-                        <input type="date" id="max-date" />
+                        <input type="date" id="min-date" disabled />
+                        <input type="date" id="max-date" disabled />
                     </div>
-                    <input type="submit" value="Buscar" id="btn-submit" class="btn" />
+                    <input type="submit" value="Buscar" id="btn-search" class="btn" />
                     <input
                         type="button"
                         value="Limpiar filtro"
-                        id="btn-clear"
+                        id="btn-clear-filter"
                         class="btn"
+                        disabled
                     />
                 </form>
             </div>

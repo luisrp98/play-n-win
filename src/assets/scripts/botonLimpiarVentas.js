@@ -1,10 +1,13 @@
+const filterForm = document.querySelector('form')
+
+const btnClear = document.querySelector('#btn-clear-filter')
 // Agregar un evento de escucha para el botón de limpiar filtro
 btnClear.addEventListener('click', () => {
     // Restablece todos los campos del formulario a sus valores iniciales
-    filterForm.reset();
+    filterForm.reset()
     // Regenera la tabla al estado inicial (sin filtros)
-    generateTableSales(); // Llama a generateTableSales nuevamente después de restablecer los filtros
-});
+    generateTableSales() // Llama a generateTableSales nuevamente después de restablecer los filtros
+})
 
 export function generateTableSales() {
     const apiURL = 'https://6534761be1b6f4c59046be6a.mockapi.io/api/games/ventas'
@@ -92,15 +95,13 @@ export function generateTableSales() {
 function regenerarTablaInicial() {
     // Realiza una solicitud para obtener los datos iniciales de la tabla
     fetch(apiURL)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
             // Actualiza la tabla con los datos iniciales
-            actualizarTablaConResultados(data);
-            generateTableSales(); // Llama a generateTableSales después de cargar los datos iniciales
+            actualizarTablaConResultados(data)
+            generateTableSales() // Llama a generateTableSales después de cargar los datos iniciales
         })
-        .catch(error => {
-            console.error('Error al cargar datos:', error);
-        });
+        .catch((error) => {
+            console.error('Error al cargar datos:', error)
+        })
 }
-
-

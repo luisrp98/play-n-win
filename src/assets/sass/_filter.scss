@@ -37,13 +37,14 @@
         }
     }
 
-    #btn-submit {
+    #btn-search {
         background-color: $color-rich-black;
         color: white;
         width: 100%;
         @include hover($color-rich-black-hover);
     }
-    #btn-clear {
+    #btn-clear,
+    #btn-clear-filter {
         background-color: white;
         width: 100%;
         @include hover($color-white-hover);

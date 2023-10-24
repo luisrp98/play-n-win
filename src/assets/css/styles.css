@@ -266,16 +266,18 @@ p {
     grid-template-columns: auto 1fr; }
     #filter #filter-stars input {
       margin-right: 0.5rem; }
-  #filter #btn-submit {
+  #filter #btn-search {
     background-color: #011627;
     color: white;
     width: 100%;
     transition-duration: 0.2s; }
-    #filter #btn-submit:hover {
+    #filter #btn-search:hover {
       background-color: #002b4f; }
-  #filter #btn-clear {
+  #filter #btn-clear,
+  #filter #btn-clear-filter {
     background-color: white;
     width: 100%;
     transition-duration: 0.2s; }
-    #filter #btn-clear:hover {
+    #filter #btn-clear:hover,
+    #filter #btn-clear-filter:hover {
       background-color: #dadada; }

@@ -28,7 +28,6 @@ document.addEventListener('click', function (event) {
     if (target && target.id === 'btn-submit') {
         addSale()
         modalbg.remove()
-       
     }
     if (target && target.id === 'btn-clear') {
         modalbg.remove()
