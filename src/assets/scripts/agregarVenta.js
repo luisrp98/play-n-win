@@ -1,3 +1,5 @@
+import { generateTableSales } from './generarTablaVentas.js'
+
 export function addSale() {
     const numeroOrden = document.getElementById('modal-num-order').textContent
     const vendedorSelect = document.getElementById('vendedor-select').value
@@ -5,7 +7,7 @@ export function addSale() {
 
     const tbody = document.getElementById('cart-body')
     const rows = tbody.getElementsByTagName('tr')
-    const total = document.getElementById('modal-total-amount').value
+    const total = document.getElementById('modal-total-amount').innerHTML
     const rowData = []
 
     // Recorre todas las filas
@@ -22,9 +24,9 @@ export function addSale() {
 
             // Crea un objeto con los datos de la fila
             const rowObject = {
-                title: title,
-                price: price,
-                quantity: quantity,
+                titulo: title,
+                precio: price,
+                cantidad: quantity,
                 subtotal: subtotal,
             }
             // Agrega el objeto al array
@@ -40,6 +42,7 @@ export function addSale() {
     }
 
     nuevaVenta.productos = rowData
+    console.log(nuevaVenta)
 
     fetch('https://6534761be1b6f4c59046be6a.mockapi.io/api/games/ventas', {
         method: 'POST',
@@ -51,9 +54,10 @@ export function addSale() {
         .then((response) => response.json())
         .then((data) => {
             console.log('Venta agregada exitosamente:', data)
-            // Cierra el modal o realiza cualquier otra acción necesaria
         })
         .catch((error) => {
             console.error('Error al agregar la venta:', error)
         })
+
+    // generateTableSales()
 }

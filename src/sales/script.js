@@ -1,7 +1,9 @@
 import { createModal } from '../assets/scripts/modal.js'
 import { addRowCart } from '../assets/scripts/añadirFila.js'
 import { addSale } from '../assets/scripts/agregarVenta.js'
+import { generateTableSales } from '../assets/scripts/generarTablaVentas.js'
 
+generateTableSales()
 const btn_sell = document.querySelector('.btn-sell')
 
 btn_sell.addEventListener('click', () => {
