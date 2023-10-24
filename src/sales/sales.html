@@ -38,35 +38,6 @@
                         <option value="Luis Romo">Luis Romo</option>
                         <option value="Mariana Silva">Mariana Silva</option>
                     </select>
-
-                    <legend>Plataforma:</legend>
-                    <input type="checkbox" name="plataforma[]" value="PS4" id="ps4" />
-                    <label for="ps4">PlayStation 4</label><br />
-                    <input type="checkbox" name="plataforma[]" value="PS5" id="ps5" />
-                    <label for="ps5">PlayStation 5</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Xbox One"
-                        id="xboxone"
-                    />
-                    <label for="xboxone">Xbox One</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Xbox X/S"
-                        id="xboxseries"
-                    />
-                    <label for="xboxseries">Xbox X/S</label><br />
-                    <input type="checkbox" name="plataforma[]" value="PC" id="pc" />
-                    <label for="pc">PC</label><br />
-                    <input
-                        type="checkbox"
-                        name="plataforma[]"
-                        value="Switch"
-                        id="switch"
-                    />
-                    <label for="switch">Nintendo Switch</label><br />
                     <legend>Precio:</legend>
                     <div id="filter-price">
                         <input type="number" id="min-price" placeholder="$ Mín." />
@@ -110,6 +81,8 @@
         </main>
 
         <script type="module" src="script.js"></script>
+        <script type="module" src="../assets/scripts/buscarVenta.js"></script>
+        <script type="module" src="../assets/scripts/botonLimpiarVentas.js"></script>
         <!-- <script type="module" src="../assets/scripts/generarTablaVentas.js"></script> -->
     </body>
 </html>
