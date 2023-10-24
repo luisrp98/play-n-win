@@ -37,7 +37,7 @@ export function addRowCart() {
                     const total = document.getElementById('modal-total-amount')
                     let totalActual = parseFloat(total.textContent.replace('$', '')) // Convierte el contenido actual a un número
                     const nuevoTotal = totalActual + parseFloat(subtotal.toFixed(2))
-                    total.innerHTML = `$${nuevoTotal}`
+                    total.innerHTML = `$${nuevoTotal.toFixed(2)}`
 
                     // Limpia los campos del formulario
                     productoSelect.selectedIndex = 0

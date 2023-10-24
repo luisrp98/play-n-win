@@ -12,7 +12,7 @@ export function generateTableSales() {
         ['Animal Crossing: New Horizons', 'animal.jpg'],
         ['The Last of Us', 'TLOU.jpg'],
         ['Until Dawn', 'untildawn.jpg'],
-        ['Saints Row', 'saintsrow.jpg'],
+        ['Saints Row IV', 'saintsrow.jpg'],
         ['Wick', 'wick.jpg'],
         ['Outlast', 'outlast.jpg'],
         ['The Witcher 3: Wild Hunt', 'witcher.jpg'],
@@ -33,7 +33,6 @@ export function generateTableSales() {
     fetch(apiURL)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             // Itera sobre los datos y crea las filas de la tabla
             data.forEach((venta) => {
                 const newRow = ventasTableBody.insertRow()

@@ -59,5 +59,12 @@ export function addSale() {
             console.error('Error al agregar la venta:', error)
         })
 
-    // generateTableSales()
+    const ventasTableBody = document.querySelector('#sales-results tbody')
+
+    while (ventasTableBody.firstChild) {
+        ventasTableBody.removeChild(ventasTableBody.firstChild)
+    }
+    setTimeout(() => {
+        generateTableSales()
+    }, 1000)
 }
