@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ventas</title>
+        <link rel="stylesheet" href="../assets/css/styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../catalogue/catalogue.html">Catálogo</a>
+                    </li>
+                    <li>
+                        <a href="../sales/sales.html">Ventas</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="f-display">
+            <div id="filter" class="border-r-1">
+                <h2 id="filter-title">Buscador</h2>
+                <form action="">
+                    <input type="text" placeholder="Buscar" id="filter-search" />
+                    <input type="radio" name="typesearch" value="title" id="title" />
+                    <label for="typesearch">Título</label>
+                    <input type="radio" name="typesearch" value="order" id="order" />
+                    <label for="typesearch">Num. de Orden</label>
+
+                    <legend>Vendedor</legend>
+                    <select name="sellers" id="filter-sellers">
+                        <option disabled selected>Selecciona una opción</option>
+                        <option value="Luis Romo">Luis Romo</option>
+                        <option value="Mariana Silva">Mariana Silva</option>
+                    </select>
+                    <legend>Precio:</legend>
+                    <div id="filter-price">
+                        <input type="number" id="min-price" placeholder="$ Mín." />
+                        <input type="number" id="max-price" placeholder="$ Máx." />
+                    </div>
+                    <legend>Fecha:</legend>
+                    <div id="form-section-date">
+                        <input type="date" id="min-date" />
+                        <input type="date" id="max-date" />
+                    </div>
+                    <input type="submit" value="Buscar" id="btn-submit" class="btn" />
+                    <input
+                        type="button"
+                        value="Limpiar filtro"
+                        id="btn-clear"
+                        class="btn"
+                    />
+                </form>
+            </div>
+            <div id="sales-results">
+                <div class="btn-section">
+                    <input type="submit" value="Agregar venta" class="btn btn-sell" />
+                    <input type="submit" value="Eliminar ventas" class="btn btn-delete" />
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="th-cb"></th>
+                            <th class="th-order">Num. de Orden</th>
+                            <th class="th-date">Fecha</th>
+                            <th class="th-product">Producto</th>
+                            <th class="th-price">Precio</th>
+                            <th class="th-seller">Vendedor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se genera la información según la API -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <script type="module" src="script.js"></script>
+        <script type="module" src="../assets/scripts/buscarVenta.js"></script>
+        <script type="module" src="../assets/scripts/botonLimpiarVentas.js"></script>
+        <!-- <script type="module" src="../assets/scripts/generarTablaVentas.js"></script> -->
+    </body>
+</html>
